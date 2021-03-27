@@ -2,14 +2,13 @@
 
 require 'sinatra'
 
-require_relative 'idea'
-require_relative 'idea_store'
+require 'idea_box'
 
 # This is the main application class
 class IdeaBoxApp < Sinatra::Base
   use Rack::MethodOverride
   configure do
-    set :views, 'views'
+    set :views, 'lib/app/views/'
     set :public_dir, 'public'
     # set :method_override, true
   end
@@ -22,7 +21,7 @@ class IdeaBoxApp < Sinatra::Base
       locals[:idea_updated] = true
       locals[:updated_idea] = IdeaStore.find(params[:updated_id].to_i)
     end
-    erb(:index, { locals: locals }, { layout: :layout })
+    erb(:index, { locals: locals })
   end
 
   post '/' do

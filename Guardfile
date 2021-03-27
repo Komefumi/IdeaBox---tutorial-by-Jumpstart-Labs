@@ -6,7 +6,7 @@ end
 
 guard 'rack', port: 4567 do
   watch('Gemfile.lock')
-  watch(%r{^(config|app|api)/.*})
+  watch(%r{^(config|app|api|lib)/.*})
 end
 
 guard :rubocop, cli: ['--auto-correct-all'] do

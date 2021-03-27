@@ -1,11 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    ast (2.4.2)
     coderay (1.1.3)
     daemons (1.3.1)
-    em-websocket (0.5.2)
-      eventmachine (>= 0.12.9)
-      http_parser.rb (~> 0.6.0)
     eventmachine (1.2.7)
     ffi (1.15.0)
     formatador (0.2.5)
@@ -23,37 +21,51 @@ GEM
       guard (~> 2.2)
       guard-compat (~> 1.1)
     guard-compat (1.2.1)
-    guard-livereload (2.5.2)
-      em-websocket (~> 0.5)
-      guard (~> 2.8)
-      guard-compat (~> 1.0)
-      multi_json (~> 1.8)
     guard-rack (2.2.1)
       ffi
       guard (~> 2.3)
       spoon
-    http_parser.rb (0.6.0)
+    guard-rubocop (1.4.0)
+      guard (~> 2.0)
+      rubocop (< 2.0)
     listen (3.5.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     lumberjack (1.2.8)
     method_source (1.0.0)
-    multi_json (1.15.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     nenv (0.3.0)
     notiffany (0.1.3)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    parallel (1.20.1)
+    parser (3.0.0.0)
+      ast (~> 2.4.1)
     pry (0.14.0)
       coderay (~> 1.1)
       method_source (~> 1.0)
     rack (2.2.3)
     rack-protection (2.1.0)
       rack
+    rainbow (3.0.0)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    regexp_parser (2.1.1)
+    rexml (3.2.4)
+    rubocop (1.12.0)
+      parallel (~> 1.10)
+      parser (>= 3.0.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml
+      rubocop-ast (>= 1.2.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.4.1)
+      parser (>= 2.7.1.5)
+    ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.4)
     shellany (0.0.1)
     sinatra (2.1.0)
@@ -69,6 +81,7 @@ GEM
       rack (>= 1, < 3)
     thor (1.1.0)
     tilt (2.0.10)
+    unicode-display_width (2.0.0)
 
 PLATFORMS
   x86_64-linux
@@ -76,8 +89,8 @@ PLATFORMS
 DEPENDENCIES
   guard
   guard-bundler
-  guard-livereload (~> 2.5)
   guard-rack
+  guard-rubocop
   rack
   sinatra
   thin
